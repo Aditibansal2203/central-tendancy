@@ -1,0 +1,23 @@
+def get_variance(data):
+ Num=len(data)
+variance=0
+for x in data:
+ variance=sum((x-mean)**2)/Num
+return variance
+age=df["Age"]
+variance_age=get_variance(age)
+  print("variance is:",variance_age)
+  def get_skewness(data)
+  n=len(data)
+  std_dev=variance**0.5
+  for x in data:
+    skewness=(sum((x-mean**3/n)/std_dev**3)
+  return skewness
+              get_skewness(age
+              print("skewness is:",get_skewness(age))
+  def get_kurtosis(data)
+  for x in data:
+   kurtosis=sum((x-mean)**4/n)/(std_dev**4)
+    get_kurtosis(age)
+    print("kurtosis is",get_kurtosis(age))
+    
