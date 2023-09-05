@@ -1,0 +1,41 @@
+import pandas as pd
+# loading the dataset
+df=pd.read.csv("Mall_Customers.csv")
+def get_mean(data):  #mean
+  total sum=sum(data)
+  N=len(data)
+  mean=total sum/N
+  return mean
+age=df("Age")
+get_mean(age)
+print("mean is:",get_mean(age))
+ def get_median(data):    #median
+ no=len(data)
+ data.sort()    # median is a ordered list
+ if no%2==1:
+   median1=data[no//2]
+   median2=data[no//2-1]
+   median=(median1+median2)/2
+else:
+ median=data[no//2]
+ return median
+ age=df("Age")
+get_median(age)
+print("median is :",get_median(age))
+def get_mode(data):
+    mode_count = 0
+    mode = None
+    for num in data:
+        count = data.count(num)
+        if count > mode_count:
+            mode_count = count
+            mode = num
+    return mode
+    age=df("Age")
+    get_mode(age)
+print("mode is :",get_mode(age))
+    
+
+
+
+
