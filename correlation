@@ -1,0 +1,19 @@
+import pandas as pd
+  df=pd.read.csv("Mall_Customers.csv")
+df
+def calculate_correlation(x, y):
+    n = len(x)
+    mean_x = sum(x) / n
+    mean_y = sum(y) / n
+    diff_x = [xi - mean_x for xi in x]
+    diff_y = [yi - mean_y for yi in y]
+    sum_diff_xy = sum([diff_x[i] * diff_y[i] for i in range(n)])
+    std_dev_x = (sum([(xi - mean_x)**2 for xi in x]) / n)**0.5
+    std_dev_y = (sum([(yi - mean_y)**2 for yi in y]) / n)**0.5
+    correlation = sum_diff_xy / (std_dev_x * std_dev_y)
+    return correlation
+age=df[Age]
+annual income=df[Annual income]
+correlation_get=calculate_correlation(age, annual income)
+      print("corealtion is:",correlation_get)
+      
