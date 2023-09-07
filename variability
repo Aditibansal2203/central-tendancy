@@ -1,0 +1,26 @@
+import pandas as pd
+df=pd.read_csv("Mall_Customers.csv")
+df
+def calculate_quartiles_percentiles_iqr(data):
+    sorted_data = sorted(data)
+    n = len(sorted_data)
+    
+    q1_pos = (25/100) * (n + 1)
+    q2_pos = (50/100) * (n + 1)
+    q3_pos = (75/100) * (n + 1)
+    
+    q1 = sorted_data[int(q1_pos) - 1]
+    q2 = sorted_data[int(q2_pos) - 1]
+    q3 = sorted_data[int(q3_pos) - 1]
+    
+    iqr = q3 - q1
+    
+    return q1, q2, q3, iqr
+age = df['Age']
+q1, q2, q3, iqr = calculate_quartiles_percentiles_iqr(age)
+
+print("Q1:", q1)
+print("Q2 (Median):", q2)
+print("Q3:", q3)
+print("IQR:", iqr)
+
